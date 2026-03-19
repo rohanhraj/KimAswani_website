@@ -94,19 +94,27 @@ export function HeroTypography({ className }: { className?: string }) {
 
             </div>
 
-            {/* Floating scroll indicator */}
+            {/* Cinematic Vertical Line Animation */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-12 right-6 md:right-12 flex flex-col items-center gap-4 text-xs tracking-widest uppercase text-muted"
+                transition={{ delay: 2, duration: 2 }}
+                className="absolute right-8 md:right-12 top-1/4 bottom-16 hidden md:flex flex-col items-center justify-center opacity-70"
             >
-                <span className="-rotate-90 origin-left mb-8">Scroll</span>
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-                    className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"
-                />
+                <div className="w-[1px] h-full bg-white/10 relative overflow-hidden">
+                    <motion.div
+                        animate={{
+                            y: ["-100%", "600%"]
+                        }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 3.5,
+                            ease: "linear",
+                            repeatDelay: 0.5
+                        }}
+                        className="w-full h-1/5 bg-gradient-to-b from-transparent via-white to-transparent"
+                    />
+                </div>
             </motion.div>
         </div>
     )

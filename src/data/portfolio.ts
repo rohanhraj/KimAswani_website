@@ -40,7 +40,7 @@ export const portfolioData: PortfolioItem[] = [
         title: "KSCA Stadium",
         subtitle: "Karnataka State Cricket Association",
         category: "Sports & Institutions",
-        image: "/images/projects/ksca-pitch.jpg",
+        image: "/images/projects/ksca-pitch/1.jpg",
         youtubeLink: "#"
     },
     {

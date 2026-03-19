@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation"
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false)
     const pathname = usePathname()
-    const isHome = pathname === "/"
+    const isVisiblePage = pathname === "/" || pathname === "/achievements"
 
     useEffect(() => {
         const handleScroll = () => {
@@ -20,7 +20,7 @@ export function Navbar() {
 
     // Hide navbar on non-home pages (portfolio has its own back button)
     // IMPORTANT: This must be after all hooks!
-    if (!isHome) return null
+    if (!isVisiblePage) return null
 
     return (
         <motion.header
@@ -30,15 +30,15 @@ export function Navbar() {
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? "bg-black/50 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-8"
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-start">
-
-                {/* Nav Links — Left aligned */}
+            <div className="w-full flex items-center justify-start pl-8 sm:pl-16 md:pl-24 lg:pl-32">
+                {/* Nav Links — Left aligned to match Hero text */}
                 <nav className="hidden md:flex items-center gap-8">
+                    <NavLink href="/" label="Home" />
                     <NavLink href="/portfolio" label="Works" />
-                    <NavLink href="#about" label="About" />
-                    <NavLink href="#contact" label="Contact" />
+                    <NavLink href="/achievements" label="Achievements" />
+                    <NavLink href="/#about" label="About" />
+                    <NavLink href="/#contact" label="Contact" />
                 </nav>
-
             </div>
         </motion.header>
     )

@@ -4,9 +4,30 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Instagram, Youtube, Facebook, Mail } from "lucide-react"
 
+const predefinedSubject = encodeURIComponent("Inquiry: Aerial Cinematography Services")
+const predefinedBody = encodeURIComponent(`Hi Kim,
+
+I am reaching out to inquire about your aerial cinematography services for an upcoming project.
+
+Project Name/Type: [Insert e.g., Commercial, Feature Film, Event]
+Estimated Dates: [Insert Dates]
+Location: [Insert Location]
+Details: [Provide any creative brief or requirements]
+
+Looking forward to hearing from you.
+
+Best regards,
+[Your Name]
+[Your Company]`)
+
 export function ContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
+
+    const defaultMessageTemplate = `Project Name/Type: [Insert e.g., Commercial, Feature Film, Event]
+Estimated Dates: [Insert Dates]
+Location: [Insert Location]
+Details: [Provide any creative brief or requirements]`
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -17,8 +38,20 @@ export function ContactForm() {
         const email = formData.get("email")
         const message = formData.get("message")
 
-        // Trigger realistic interaction resolving exactly to mailto links
-        const mailtoLink = `mailto:kimaswani@gmail.com?subject=Cinematography Inquiry from ${name}&body=From: ${name} (${email})%0D%0A%0D%0A${message}`
+        // Format the email body cleanly with all provided details
+        const formattedBody = `Hi Kim,
+
+I have submitted an inquiry via your website. Here are the details:
+
+Message/Details:
+${message}
+
+Sender Information:
+Name: ${name}
+Email: ${email}
+`
+        
+        const mailtoLink = `mailto:kimaswani@gmail.com?subject=${encodeURIComponent(`Website Inquiry from ${name}`)}&body=${encodeURIComponent(formattedBody)}`
         window.location.href = mailtoLink
 
         setTimeout(() => {
@@ -64,6 +97,7 @@ export function ContactForm() {
                                 required
                                 className="w-full bg-transparent border-b border-white/20 pb-4 text-white text-lg focus:outline-none focus:border-white transition-colors peer placeholder-transparent"
                                 id="name"
+                                name="name"
                                 placeholder="Name"
                             />
                             <label
@@ -80,6 +114,7 @@ export function ContactForm() {
                                 required
                                 className="w-full bg-transparent border-b border-white/20 pb-4 text-white text-lg focus:outline-none focus:border-white transition-colors peer placeholder-transparent"
                                 id="email"
+                                name="email"
                                 placeholder="Email"
                             />
                             <label
@@ -94,9 +129,11 @@ export function ContactForm() {
                     <div className="relative group pt-4">
                         <textarea
                             required
-                            rows={4}
-                            className="w-full bg-transparent border-b border-white/20 pb-4 text-white text-lg focus:outline-none focus:border-white transition-colors peer placeholder-transparent resize-none leading-relaxed"
+                            rows={8}
+                            defaultValue={defaultMessageTemplate}
+                            className="w-full bg-transparent border-b border-white/20 pb-4 text-white text-lg focus:outline-none focus:border-white transition-colors peer placeholder-transparent resize-y leading-relaxed"
                             id="message"
+                            name="message"
                             placeholder="Message"
                         />
                         <label
@@ -143,7 +180,7 @@ export function ContactForm() {
                         <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
                             <Facebook className="w-6 h-6" strokeWidth={1.5} />
                         </a>
-                        <a href="mailto:kimaswani@gmail.com" className="text-white/60 hover:text-white transition-colors duration-300">
+                        <a href={`mailto:kimaswani@gmail.com?subject=${predefinedSubject}&body=${predefinedBody}`} className="text-white/60 hover:text-white transition-colors duration-300">
                             <Mail className="w-6 h-6" strokeWidth={1.5} />
                         </a>
                     </div>

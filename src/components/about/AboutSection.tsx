@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 export function AboutSection() {
     return (
@@ -37,10 +38,10 @@ export function AboutSection() {
                                 Kim Aswani is a pioneer in aerial cinematography, consistently pushing the limitations of drones to capture the world from historically impossible angles. His work merges raw technical precision with an unrelenting cinematic eye.
                             </p>
                             <p>
-                                From monumental government infrastructure projects and explosive action sports events to intricate natural landscapes and record-breaking drone shows, Kim's portfolio spans over a decade of high-end visual storytelling.
+                                From monumental government infrastructure projects and explosive action sports events to intricate natural landscapes and record-breaking drone shows, Kim&apos;s portfolio spans over a decade of high-end visual storytelling.
                             </p>
                             <p className="border-l border-white/20 pl-4 py-1 italic text-zinc-500">
-                                "The sky isn't the limit; it's the canvas."
+                                &quot;The sky isn&apos;t the limit; it&apos;s the canvas.&quot;
                             </p>
                         </motion.div>
 
@@ -53,6 +54,22 @@ export function AboutSection() {
                             <p className="font-serif text-3xl italic text-white/80 mt-4 tracking-wider">
                                 Kim Aswani
                             </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                            className="mt-6 md:mt-10"
+                        >
+                            <Link
+                                href="/achievements"
+                                className="inline-flex items-center gap-4 px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-white hover:text-black transition-all duration-500 group backdrop-blur-sm"
+                            >
+                                Discover Records & Impact
+                                <span className="opacity-50 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-500 text-lg leading-none">→</span>
+                            </Link>
                         </motion.div>
                     </div>
 
