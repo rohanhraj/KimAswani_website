@@ -12,6 +12,8 @@ const certificates = [
     { src: "/images/achievements/certification/Digital Sky UIN Registration April 2022.jpg", alt: "Digital Sky UIN Registration" },
     { src: "/images/achievements/certification/EU Drone Registration.jpg", alt: "EU Drone Registration" },
     { src: "/images/achievements/certification/Thailand Pilot License.png", alt: "Thailand Pilot License" },
+    { src: "/images/achievements/certification/Kim With Team and Guinness Certificate 2025.jpg", alt: "Guinness World Record 2025" },
+    { src: "/images/achievements/certification/Course_Completion_Certificate.jpg", alt: "Course Completion Certificate" },
 ]
 
 export function CertificatesCarousel() {

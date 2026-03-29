@@ -124,7 +124,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "udupi-tourism",
         title: "Udupi Tourism Dept",
         category: "Tourism & Gov",
-        image: "/thumbnails/Udupi.DNG",
+        image: "/thumbnails/Udupi.jpg",
         youtubeLink: "#"
     },
     {
