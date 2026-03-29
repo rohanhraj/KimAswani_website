@@ -91,7 +91,7 @@ export default function PortfolioPage() {
                                 transition={{ duration: 0.4, ease: "easeInOut" }}
                                 className="group relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-zinc-900 border border-white/5 block"
                             >
-                                <Link href={item.youtubeLink} target="_blank" className="block w-full h-full relative z-10">
+                                <Link href={`/portfolio/${item.id}`} className="block w-full h-full relative z-10">
                                     {/* Image or Gradient Placeholder */}
                                     {item.image ? (
                                         <Image
