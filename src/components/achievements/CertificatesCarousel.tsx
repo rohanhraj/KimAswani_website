@@ -17,8 +17,6 @@ const certificates = [
 ]
 
 export function CertificatesCarousel() {
-    // Duplicate for seamless loop
-    const carouselItems = [...certificates, ...certificates, ...certificates]
 
     return (
         <section className="py-24 bg-[#050505] overflow-hidden border-b border-zinc-900">
@@ -43,27 +41,30 @@ export function CertificatesCarousel() {
                 <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
 
                 <motion.div
-                    className="flex shrink-0 gap-8 md:gap-16 items-center py-4"
-                    animate={{ x: [0, -1035 * 1.5] }} // Approximate width to scroll before repeating
+                    className="flex shrink-0 items-center py-4 w-max"
+                    animate={{ x: ["0%", "-50%"] }}
                     transition={{
                         repeat: Infinity,
-                        repeatType: "loop",
-                        duration: 30, // Adjust speed
                         ease: "linear",
+                        duration: 40,
                     }}
                 >
-                    {carouselItems.map((cert, index) => (
-                        <div 
-                            key={index}
-                            className="relative h-[400px] w-auto shrink-0 group filter grayscale hover:grayscale-0 transition-all duration-700 ease-out border border-zinc-800"
-                        >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                                src={cert.src}
-                                alt={cert.alt}
-                                loading="lazy"
-                                className="h-full w-auto object-contain bg-black p-2 md:p-4"
-                            />
+                    {[...Array(2)].map((_, setIndex) => (
+                        <div key={setIndex} className="flex shrink-0 gap-8 md:gap-16 px-4 md:px-8">
+                            {certificates.map((cert, index) => (
+                                <div 
+                                    key={index}
+                                    className="relative h-[250px] md:h-[400px] w-auto shrink-0 group filter grayscale hover:grayscale-0 transition-all duration-700 ease-out border border-zinc-800"
+                                >
+                                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                                    <img
+                                        src={cert.src}
+                                        alt={cert.alt}
+                                        loading="lazy"
+                                        className="h-full w-auto object-contain bg-black p-2 md:p-4"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </motion.div>
