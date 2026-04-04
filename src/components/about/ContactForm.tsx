@@ -171,13 +171,13 @@ Email: ${email}
                 >
                     <p className="text-xs text-white/40 tracking-[0.3em] uppercase">Connect With Kim</p>
                     <div className="flex gap-10">
-                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
+                        <a href="https://www.instagram.com/kimaswani/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
                             <Instagram className="w-6 h-6" strokeWidth={1.5} />
                         </a>
-                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
+                        <a href="https://www.youtube.com/@KimAswani" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
                             <Youtube className="w-6 h-6" strokeWidth={1.5} />
                         </a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
+                        <a href="https://www.facebook.com/kimaswani/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors duration-300">
                             <Facebook className="w-6 h-6" strokeWidth={1.5} />
                         </a>
                         <a href={`mailto:kimaswani@gmail.com?subject=${predefinedSubject}&body=${predefinedBody}`} className="text-white/60 hover:text-white transition-colors duration-300">

@@ -44,19 +44,32 @@ export function MediaAppearances() {
 
                         <div className="flex flex-col gap-6">
                             {[
-                                { title: "Police Dept Drone Seminar", year: "2025", desc: "Specialized tactical and surveillance drone operations." },
-                                { title: "Mysore University Workshop", year: "2024", desc: "Intro to aerial cinematography and safety norms." },
+                                { title: "Police Dept Drone Seminar", year: "2025", desc: "Specialized tactical and surveillance drone operations.", link: "https://www.instagram.com/stories/highlights/18070502852388087/" },
+                                { title: "Mysore University Workshop", year: "2024", desc: "Intro to aerial cinematography and safety norms.", link: "https://www.instagram.com/stories/archive/18057347440830873/" },
                                 { title: "Mysore University Workshop", year: "2023", desc: "Guest faculty for visual communication students." }
                             ].map((item, i) => (
-                                <div key={i} className="group flex flex-col sm:flex-row sm:items-baseline justify-between py-4 border-b border-white/5 hover:border-white/20 transition-colors cursor-pointer">
-                                    <div className="flex flex-col">
-                                        <h4 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white group-hover:text-primary transition-colors">
-                                            {item.title}
-                                        </h4>
-                                        <p className="text-zinc-500 font-light mt-1 text-sm">{item.desc}</p>
+                                item.link ? (
+                                    <a href={item.link} target="_blank" rel="noopener noreferrer" key={i} className="group flex flex-col sm:flex-row sm:items-baseline justify-between py-4 border-b border-white/5 hover:border-white/20 transition-colors cursor-pointer block">
+                                        <div className="flex flex-col">
+                                            <h4 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white group-hover:text-primary transition-colors flex items-center gap-2">
+                                                {item.title}
+                                                <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                            </h4>
+                                            <p className="text-zinc-500 font-light mt-1 text-sm">{item.desc}</p>
+                                        </div>
+                                        <span className="text-zinc-600 font-mono mt-2 sm:mt-0">{item.year}</span>
+                                    </a>
+                                ) : (
+                                    <div key={i} className="group flex flex-col sm:flex-row sm:items-baseline justify-between py-4 border-b border-white/5 hover:border-white/20 transition-colors cursor-pointer">
+                                        <div className="flex flex-col">
+                                            <h4 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white group-hover:text-primary transition-colors">
+                                                {item.title}
+                                            </h4>
+                                            <p className="text-zinc-500 font-light mt-1 text-sm">{item.desc}</p>
+                                        </div>
+                                        <span className="text-zinc-600 font-mono mt-2 sm:mt-0">{item.year}</span>
                                     </div>
-                                    <span className="text-zinc-600 font-mono mt-2 sm:mt-0">{item.year}</span>
-                                </div>
+                                )
                             ))}
                         </div>
                     </motion.div>
@@ -75,20 +88,27 @@ export function MediaAppearances() {
                             </h3>
 
                             <div className="flex flex-col gap-8">
-                                <div className="group cursor-pointer">
+                                <a href="https://www.youtube.com/watch?v=QlyOS5S3wVk&t=44s" target="_blank" rel="noopener noreferrer" className="group cursor-pointer block">
                                     <h4 className="text-lg font-bold uppercase tracking-tight text-white flex items-center gap-2">
                                         Uncharted Angles Podcast
                                         <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors group-hover:-translate-y-1 group-hover:translate-x-1" />
                                     </h4>
                                     <p className="text-zinc-500 text-sm mt-2">Discussing the evolution of drone tech in commercial advertising.</p>
-                                </div>
-                                <div className="group cursor-pointer">
+                                </a>
+                                <a href="https://www.instagram.com/p/DPORhgbEq93/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer block">
                                     <h4 className="text-lg font-bold uppercase tracking-tight text-white flex items-center gap-2">
-                                        Guinness World Record Mention
+                                        Guinness World Record – No 1
                                         <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors group-hover:-translate-y-1 group-hover:translate-x-1" />
                                     </h4>
                                     <p className="text-zinc-500 text-sm mt-2">Featured for choreography spanning the 2024 Drone Light festival.</p>
-                                </div>
+                                </a>
+                                <a href="https://www.instagram.com/p/DPORhgbEq93/" target="_blank" rel="noopener noreferrer" className="group cursor-pointer block">
+                                    <h4 className="text-lg font-bold uppercase tracking-tight text-white flex items-center gap-2">
+                                        Guinness World Record – No 2
+                                        <ArrowUpRight className="w-4 h-4 text-zinc-600 group-hover:text-white transition-colors group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                    </h4>
+                                    <p className="text-zinc-500 text-sm mt-2">Featured for choreography spanning the 2025 Drone Light festival.</p>
+                                </a>
                             </div>
                         </div>
                     </motion.div>

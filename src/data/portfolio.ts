@@ -182,6 +182,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "guinness-2024",
         title: "Guinness World Record Event 2024",
         category: "Events & Shows",
+        image: "/thumbnails/GWR 1 .png",
         youtubeLink: "#",
         links: [
             { label: "Kundyolanda Hockey Carnival (1)", url: "https://www.instagram.com/p/C6DmDOFS1XZ/" },
@@ -192,6 +193,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "guinness-2025",
         title: "Guinness World Record Event 2025",
         category: "Events & Shows",
+        image: "/thumbnails/GWR 2.png",
         youtubeLink: "#",
         links: [
             { label: "Largest Mammal GWR 2025", url: "https://www.instagram.com/p/DPORhgbEq93/" },
@@ -297,6 +299,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "nandi-hills",
         title: "Nandi Hills",
         category: "Tourism & Gov",
+        image: "/thumbnails/Nandi Hills.png",
         youtubeLink: "#",
         links: [
             { label: "Nandi Hills", url: "https://www.instagram.com/stories/highlights/18073296020070209/" },
@@ -308,6 +311,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "kia-factory",
         title: "KIA Factory",
         category: "Cityscapes & Architecture",
+        image: "/thumbnails/Kia.png",
         youtubeLink: "#",
         links: [{ label: "KIA Factory", url: "https://youtu.be/UZ4ITd_axPs" }]
     },
@@ -315,6 +319,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "vande-bharat-express",
         title: "Vande Bharat Express",
         category: "Cityscapes & Architecture",
+        image: "/thumbnails/VB Express.png",
         youtubeLink: "#",
         links: [{ label: "Vande Bharat Express", url: "https://www.instagram.com/p/DNKg3NQAkpc/" }]
     },
@@ -322,6 +327,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "drone-fishing",
         title: "Drone Fishing",
         category: "Fine Art",
+        image: "/thumbnails/drone fishing.png",
         youtubeLink: "#",
         links: [{ label: "Drone Fishing", url: "https://www.instagram.com/p/B3PmKbGnsmr/" }]
     },
@@ -329,6 +335,7 @@ export const portfolioData: PortfolioItem[] = [
         id: "drone-workshops-others",
         title: "Workshops - Others",
         category: "Workshops & Education",
+        image: "/thumbnails/Drone Workshop mys 2.jpg",
         youtubeLink: "#",
         links: [{ label: "Convergence Institute of Media", url: "https://www.instagram.com/p/CdDujRMKqN7/?img_index=1" }]
     }

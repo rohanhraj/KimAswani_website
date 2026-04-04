@@ -50,7 +50,7 @@ export function WorkShowcase() {
                             transition={{ duration: 1, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
                             className={`group relative overflow-hidden bg-muted rounded-xl ${getSizeClasses(item.featured)} shadow-2xl`}
                         >
-                            <Link href={item.youtubeLink} className="absolute inset-0 w-full h-full block z-20">
+                            <Link href={`/portfolio/${item.id}`} className="absolute inset-0 w-full h-full block z-20">
                                 {/* Base Image */}
                                 {item.image ? (
                                     <Image
